@@ -16,7 +16,7 @@ var Windy = function (params) {
   var MAX_WIND_INTENSITY = 40;              // wind velocity at which particle intensity is maximum (m/s)
   var MAX_PARTICLE_AGE = 100;                // max number of frames a particle is drawn before regeneration
   var PARTICLE_LINE_WIDTH = 0.6;              // line width of a drawn particle
-  var PARTICLE_MULTIPLIER = 1 / 20;              // particle count scalar (completely arbitrary--this values looks nice)
+  var PARTICLE_MULTIPLIER = 1 / 200;              // particle count scalar (completely arbitrary--this values looks nice)
   var PARTICLE_REDUCTION = 0.5;            // reduce particle count to this much of normal for mobile devices
   var FRAME_RATE = 60;                      // desired milliseconds per frame
   var BOUNDARY = 0.45;
@@ -315,7 +315,7 @@ var Windy = function (params) {
   var animate = function (bounds, field) {
 
     function windIntensityColorScale(step, maxWind) {
-      result = ["#d73027", "#f46d43", "#fdae61", "#fee090", "#ffffbf", "#e0f3f8", "#abd9e9", "#74add1", "#4575b4"];
+      result = ["#4575b4", "#74add1", "#abd9e9", "#e0f3f8", "#ffffbf", "#fee090", "#fdae61", "#f46d43", "#d73027"];
       result.indexFor = function (m) {  // map wind speed to a style
         return Math.floor(Math.min(m, maxWind) / maxWind * (result.length - 1));
       };
